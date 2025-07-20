@@ -1,13 +1,13 @@
-# Изучение REACT
-Web приложение, аналогичное Инстаграм, с использованием API реализованном на RoR.
+# Изучение Node.JS
+Web приложение, аналогичное Инстаграм, с использованием API реализованном на RoR и с чатом на node.js.
 
 ## Клонирование и подготовка
 
 Склонируйте репозиторий и перейдите в каталог проекта:
 
 ```bash
-git clone https://github.com/Gladiator04n73/killer.git
-cd killer
+git clone https://github.com/Gladiator04n73/chat.git
+cd chat
 ```
 
 ## Запуск с помощью скрипта start.sh
