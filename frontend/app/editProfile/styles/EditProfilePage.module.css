@@ -1,0 +1,96 @@
+.editProfile {
+  background: #f9f9f9; /* Reverted background to previous color */
+  height: 100vh; /* Adjusted height to prevent overflow */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #262626;
+}
+
+.mainContent {
+  max-height: 69vh;
+  max-width: 924px;
+  margin: 32px auto;
+  padding: 0 20px 32px 12px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 24% 76%;
+  gap: 20px;
+}
+
+.profileSection {
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 0 3px 3px 0;
+  padding: 33px 80px;
+}
+
+.profileHeader {
+  padding: 0px 6px 0px 44px;
+  display: flex;
+  gap: 27px;
+  margin-bottom: 32px;
+}
+
+.avatarContainer {
+  width: 38px;
+  height: 38px;
+  background: #c4c4c4;
+  border-radius: 50%;
+}
+
+.username {
+  font-size: 20px;
+  color: #262626;
+  margin: 0;
+}
+
+.changePhotoButton {
+  font-weight: 600;
+  color: #0095f6;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 43px;
+}
+
+.submitButton {
+  background: rgba(0, 149, 246, 0.25);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+
+.deactivateButton {
+  color: #0095f6;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileSection {
+    padding: 20px;
+  }
+}

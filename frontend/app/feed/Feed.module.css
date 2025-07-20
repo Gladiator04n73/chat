@@ -1,0 +1,139 @@
+.feed {
+  background-color: rgba(249, 249, 249, 1);
+  display: flex;
+  padding-bottom: 24px;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(142, 142, 142, 1);
+  white-space: nowrap;
+  justify-content: center;
+  padding: 12px 70px;
+  font: 400 16px Roboto, sans-serif;
+}
+
+.headerContent {
+  display: flex;
+  width: 924px;
+  max-width: 100%;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logo {
+  aspect-ratio: 3.55;
+  object-fit: contain;
+  object-position: center;
+  width: 103px;
+  align-self: stretch;
+  max-width: 100%;
+  margin: auto 0;
+}
+
+.searchContainer {
+  border-radius: 8px;
+  background-color: rgba(239, 239, 239, 1);
+  align-self: stretch;
+  display: flex;
+  gap: 12px;
+  width: 235.1px;
+  padding: 9px 20px;
+}
+
+.searchIcon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 16px;
+  align-self: start;
+}
+
+.searchInput {
+  flex-basis: auto;
+  width: 153.1px;
+  border: none;
+  background: transparent;
+  color: rgba(142, 142, 142, 1);
+}
+
+.navIcons {
+  aspect-ratio: 11.24;
+  object-fit: contain;
+  object-position: center;
+  width: 269px;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.mainContent {
+  align-self: center;
+  z-index: 10;
+  margin-top: 20px;
+  width: 941px;
+  max-width: 100%;
+}
+
+.contentGrid {
+  gap: 20px;
+  display: flex;
+}
+
+.feedColumn {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 65%;
+  margin-left: 0;
+}
+
+.sidebarColumn {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 35%;
+  margin-left: 20px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 991px) {
+  .header {
+    max-width: 100%;
+    white-space: initial;
+    padding: 0 20px;
+  }
+
+  .contentGrid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .feedColumn {
+    width: 100%;
+  }
+
+  .sidebarColumn {
+    width: 100%;
+    margin-top: 24px;
+  }
+}

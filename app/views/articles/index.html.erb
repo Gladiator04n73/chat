@@ -1,0 +1,33 @@
+<h1>Посты</h1>
+
+<%= search_form_for @q, url: api_articles_path do |f| %>
+  <div class="field">
+    <%= f.label :title_cont, "Название поста" %>
+    <%= f.search_field :title_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :body_cont, "Содержание поста" %>
+    <%= f.search_field :body_cont %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Поиск" %>
+  </div>
+<% end %>
+
+
+<ul>
+  <li>
+<%= link_to 'All Articles', api_articles_path %>
+  <% @articles.each do |article| %>
+      <li>
+      <% if article.photo.attached? %>
+<%= link_to(api_article_path(article)) do %>
+        <%= image_tag(article.photo.variant(resize_to_limit: [300, 100])) %>
+        <span><%= article.title %></span>
+<% end %>
+      <% else %>
+<%= link_to article.title, api_article_path(article) %>
+      <% end %>
+      </li>
+  <% end %>
+</ul>

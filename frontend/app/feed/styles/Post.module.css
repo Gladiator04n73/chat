@@ -1,0 +1,161 @@
+.post {
+  border-radius: 3px;
+  display: flex;
+  margin-top: 24px;
+  width: 100%;
+  flex-direction: column;
+  border: 1px solid rgba(239, 239, 239, 1);
+}
+
+.header {
+  border-radius: 3px 3px 0 0;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  color: rgba(38, 38, 38, 1);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+
+.userInfo {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.avatar {
+  background-color: rgba(196, 196, 196, 1);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.username {
+  font-weight: 600;
+}
+
+.divider {
+  height: 1px;
+  border: 1px solid rgba(239, 239, 239, 1);
+}
+
+.image {
+  background-color: rgba(196, 196, 196, 1);
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.navIconsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.navIcons {
+  width: 24px;
+  height: 24px;
+  gap: 20px;
+}
+
+.navIconsContainerLeft {
+  display: flex;
+  gap: 24px;
+}
+
+.navIconsContainerRight {
+  display: flex;
+}
+
+.likes {
+  color: black;
+  font-weight: 600;
+}
+
+.description {
+  color: black;
+  font-weight: 500;    
+  padding: 10px 0 10px;
+}
+
+.seeComments {
+  color: rgba(142, 142, 142, 1);
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.timeAgo {
+  color: rgba(142, 142, 142, 1);
+  font-weight: 500;
+}
+
+.content {
+  border-radius: 0 0 3px 3px;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 15px 15px;
+}
+
+.actions {
+  background-color: rgba(255, 255, 255, 1);
+  border-top: 1px solid rgba(239, 239, 239, 1);
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 19px 15px 14px;
+}
+
+.commentSection {
+  display: flex;
+  gap: 12px;
+  color: rgba(142, 142, 142, 1);
+}
+
+.commentInput {
+  border: none;
+  background: transparent;
+  flex: 1;
+  color: rgba(142, 142, 142, 1);
+  outline: none;
+}
+.postButton {
+  color: rgba(0, 149, 246, 1);
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .post {
+    max-width: 100%;
+  }
+
+  .header {
+    max-width: 100%;
+    white-space: initial;
+  }
+
+  .image {
+    max-width: 100%;
+  }
+
+  .actions {
+    max-width: 100%;
+    margin-right: 10px;
+  }
+}

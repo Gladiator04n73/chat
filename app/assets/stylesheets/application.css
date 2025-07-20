@@ -1,0 +1,206 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+.profile-photo {
+  width: 5px; /* Ширина изображения */
+  height: 5px; /* Высота изображения */
+  border-radius: 50%; /* Делаем изображение круглым */
+  margin-right: 10px; /* Отступ справа */
+}
+
+.forum_post {
+    border-top: 1px solid #ccc;
+    padding: 8px 0px;
+
+    &:target {
+        background-color: rgb(248, 238, 199);
+        padding: 8px;
+    }
+}
+
+.edit-comment {
+    background: none;
+    border: none;
+}
+
+.save-comment {
+    background: none;
+    border: none;
+}
+
+.delete-comment {
+    background: none;
+    border: none;
+}
+
+ .glyphicon {
+    font-size: 20px; 
+ }
+
+ .dropbtn {
+    background: none;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+
+
+
+
+
+
+
+  .dropbtn-ut {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-ut {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content-ut {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+  }
+  
+  .dropdown-content-ut a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content-ut a:hover {background-color: #ddd;}
+  
+  .dropdown-ut:hover .dropdown-content-ut {display: block;}
+
+
+
+  .forum-thread-link {
+    font-size: 40px;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px; 
+    font-size: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #fff;
+    width: 120px;
+  }
+  .field {
+    text-align: left; 
+    margin-bottom: 20px; 
+  }
+  
+  .select-wrapper {
+    position: relative; 
+  }
+  
+  .form-select {
+    width: 100%; 
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  main.container {
+    flex: 1;
+  }
+footer {
+  background: #00000059;
+}
+  .footer-custom .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+  }
+  
+  .footer-custom .navbar-nav {
+    flex-direction: row;
+  }
+  
+  .nav-link {
+    font-weight: bold;
+    color: #ffffffd9;
+    display: block;
+    padding: .5rem 1rem;
+}
+ul {
+  margin-top: 10px; /* Увеличивает расстояние между элементами списка */
+  list-style: none; /* Убирает маркеры списка */
+  padding-left: 0; /* Убирает отступ слева */
+  display: flex; /* Включает Flexbox */
+  flex-direction: column; /* Выстраивает дочерние элементы в колонку */
+  align-items: center; /* Центрирует элементы по горизонтали */
+}
+
+ul li {
+
+  margin-bottom: 10px; /* Увеличивает расстояние между элементами списка */
+  border-bottom: 1px solid #ccc; /* Добавляет линию подчеркивания к каждому элементу */
+  width: 100%; /* Задает ширину для элементов списка */
+} 
+
+ul li:last-child {
+  border-bottom: none; /* Убирает подчеркивание у последнего элемента */
+}

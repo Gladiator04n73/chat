@@ -1,0 +1,203 @@
+.loginContainer {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 75px 70px;
+}
+
+.contentWrapper {
+  width: 815px;
+  max-width: 100%;
+}
+
+.twoColumnLayout {
+  gap: 20px;
+  display: flex;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 50%;
+  margin-left: 0;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.formSection {
+  display: flex;
+  margin-top: 16px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.loginForm {
+  border-radius: 3px;
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  font-family: Roboto, sans-serif;
+  color: #959595;
+  font-weight: 400;
+  padding: 25px 41px;
+  border: 1px solid #efefef;
+}
+
+.logo {
+  aspect-ratio: 3.22;
+  object-fit: contain;
+  object-position: center;
+  width: 183px;
+  align-self: center;
+  max-width: 100%;
+}
+
+.inputField {
+  border-radius: 3px;
+  background-color: #fafafa;
+  margin-top: 15px;
+  font-size: 12px;
+  padding: 13px;
+  border: 1px solid #dbdbdb;
+}
+
+.loginButton {
+  border-radius: 4px;
+  background-color: rgba(0, 149, 246, 1);
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  padding: 7px 70px;
+  border: none;
+  cursor: pointer;
+}
+
+.hrContainer {
+  padding: 17px 0px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.divider {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  align-self: center;
+  width: 47px;
+  font-size: 9px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1;
+}
+
+.hrOnDiv {
+  width: 100%;
+}
+
+.googleButton {
+  border-radius: 59px;
+  background-color: #efefef;
+  display: flex;
+  margin-top: 15px;
+  gap: 24px;
+  font-size: 11px;
+  color: #000;
+  font-weight: 500;
+  padding: 7px 37px;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center
+}
+
+.googleIcon {
+  aspect-ratio: 0.95;
+  object-fit: contain;
+  object-position: center;
+  width: 20px;
+}
+
+.forgotPassword {
+  color: #0095f6;
+  font-size: 11px;
+  align-self: center;
+  margin-top: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.signupPrompt {
+  border-radius: 3px;
+  background-color: #fff;
+  display: flex;
+  margin-top: 10px;
+  gap: 6px;
+  padding: 24px 70px;
+  font: 14px Roboto, sans-serif;
+  border: 1px solid #efefef;
+  justify-content: center;
+  font-weight: 400;
+  color: #353535;
+}
+
+.signupButton {
+  color: #0095f6;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.downloadPrompt {
+  color: #262626;
+  align-self: center;
+  margin-top: 21px;
+  font: 400 14px Roboto, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .loginContainer {
+    padding: 100px 20px;
+  }
+
+  .twoColumnLayout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%;
+  }
+
+  .loginForm {
+    padding: 0 20px;
+  }
+
+  .inputField {
+    padding-right: 20px;
+  }
+
+  .loginButton,
+  .googleButton {
+    padding: 0 20px;
+  }
+
+  .signupPrompt {
+    padding: 0 20px;
+  }
+}

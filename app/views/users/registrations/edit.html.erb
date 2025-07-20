@@ -1,0 +1,59 @@
+<h2>Редактирование профиля <%= current_user.nickname %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <% if current_user&.photo.present? %>
+    <%= image_tag current_user.photo.variant(resize_to_limit: [150, 150]), class: "profile-photo" %>
+  <% end %>
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Никнейм" %><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Почта" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label "Новый пароль" %> <i>
+    <small id="passwordHelpInline" class="text-muted">
+      не менее 6 символов.
+    </small></i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+    <% if @minimum_password_length %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Подтвердить пароль" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Текущий пароль" %> <i><small id="passwordHelpInline" class="text-muted">
+    введите свой пароль, чтобы подтвердить изменения.
+    </small></i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Обновить", class: "btn btn-primary btn-sm" %>
+  </div>
+<% end %>
+
+<h3>Опасно!</h3>
+
+<div> <%= button_to "Удалить профиль", delete_account_user_path(current_user), data: { confirm: "Вы уверены?" }, method: :delete, class: "btn btn-danger" %></div>
+
+<%= link_to "Вернуться на форум :D", :back %>

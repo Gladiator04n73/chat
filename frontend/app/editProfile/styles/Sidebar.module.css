@@ -1,0 +1,69 @@
+.leftsideBg {
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 3px 0 0 3px;
+  width: 235px;
+  height: 100%; /* Change height to 100% to match profileContainer */
+}
+
+.sectionEdit {
+  display: grid;
+  align-items: center;
+  display: flex;
+  gap: 38px;
+}
+
+.activeBorder {
+  border-radius: 3px 3px 3px 0;
+  width: 3px;
+  height: 52px;
+  background: #000;
+}
+
+.changePassword {
+  padding: 15px 0px 0px 41px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+}
+
+.editProfileText {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.accountsSection {
+  border-top: 1px solid #efefef;
+  padding: 57px 28px;
+  margin-top: 335px;
+}
+
+.accountsIcon {
+  width: 60px;
+  height: auto;
+}
+
+.accountsCenter {
+  color: #0095f6;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.accountsDescription {
+  color: #8e8e8e;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .accountsSection {
+
+    padding: 20px;
+  }
+}

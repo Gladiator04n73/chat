@@ -1,0 +1,50 @@
+services:
+  backend:
+    build:
+      context:  ./
+      dockerfile: dockerfiles/Dockerfile.rails7.2
+    command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3001 -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    environment:
+      - HISTFILE=/usr/src/app/log/.bash_history
+      - DB_USER=root
+      - DB_PASSWORD=change_me_right_now
+      - DB_HOST=db
+    depends_on:
+      - db
+      - redis
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - backend
+  db:
+    image: mysql
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=change_me_right_now
+    volumes:
+      - ../init-script.sql:/docker-entrypoint-initdb.d/init-script.sql
+      - db-data:/var/lib/mysql
+  redis:
+    image: redis
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
+  bundle:
+  db-data:

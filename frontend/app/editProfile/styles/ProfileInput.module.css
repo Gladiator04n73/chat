@@ -1,0 +1,128 @@
+.profileContainer {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  height: 100%; /* Ensure the container takes full height */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #262626;
+}
+
+.profilePhoto {
+  width: 100px; /* Set the desired width */
+  height: 100px; /* Set the desired height */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensure the image covers the area */
+}
+.profileSection {
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 0 3px 3px 0;
+  padding: 33px 80px;
+  height: 100%; /* Ensure the section takes full height */
+}
+
+.profileHeader {
+  padding: 0px 6px 0px 44px;
+  display: flex;
+  gap: 27px;
+  margin-bottom: 32px;
+}
+
+.avatarContainer {
+  width: 38px;
+  height: 38px;
+  background: #c4c4c4;
+  border-radius: 50%;
+}
+
+.username {
+  font-size: 20px;
+  color: #262626;
+  margin: 0;
+}
+
+.changePhotoButton {
+  font-weight: 600;
+  color: #0095f6;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+.inputContainer {
+  display: grid;
+  grid-template-columns: 111px 1fr;
+  gap: 13px 26px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+  align-content: center;
+}
+.formLabel {
+  text-align: right;
+  color: black;
+  font-weight: 600;
+}
+
+.formInput {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.helpText {
+  color: #737373;
+  font-size: 14px;
+  line-height: 1.5;
+  grid-column: 2;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 18px;
+  grid-column: 2;
+}
+.actionButtons {
+  grid-column: 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 24px;
+  align-items: center;
+  justify-content: space-between; /* Adjusted to evenly space buttons */
+}
+
+.submitButton {
+  background: #0095f6;
+  color: white;
+  padding: 5px; /* Increased padding for better size */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 58px;
+}
+
+.descriptionTextarea {
+  width: 100%;
+  padding: 8px 12px; /* Adjusted padding to match formInput */
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: 'Roboto', sans-serif; /* Apply the website's font */
+  text-transform: none; /* Remove uppercase */
+  font-size: 12px;
+  color: #262626;
+}

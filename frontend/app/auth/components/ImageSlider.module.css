@@ -1,0 +1,36 @@
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 635px;
+  flex-grow: 1;
+  align-items: end;
+  padding: 25px 71px 68px;
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.overlayImage {
+  aspect-ratio: 0.45;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  margin-right: -49px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .sliderContainer {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}

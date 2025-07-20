@@ -1,0 +1,14 @@
+.postImageContainer {
+  margin: 0px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.postImage {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+}

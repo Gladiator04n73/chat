@@ -1,0 +1,16 @@
+.storeButtonsContainer {
+  align-self: center;
+  display: flex;
+  margin-top: 21px;
+  width: 278px;
+  max-width: 100%;
+  gap: 7px;
+}
+
+.storeButton {
+  aspect-ratio: 3.38;
+  object-fit: contain;
+  object-position: center;
+  width: 135px;
+  max-width: 100%;
+}

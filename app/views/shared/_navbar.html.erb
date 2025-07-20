@@ -1,0 +1,22 @@
+
+<header class="navbar <%= content_for?(:navbar_style) ? yield(:navbar_style) : "navbar-default" %> navbar-static-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to root_url, class: "navbar-brand" do %>
+        Rugramchik
+      <% end %>
+    </div>
+
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "Мой профиль", edit_user_registration_path %></li>
+          <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Регистрация", new_user_registration_path %></li>
+          <li><%= link_to "Войти", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

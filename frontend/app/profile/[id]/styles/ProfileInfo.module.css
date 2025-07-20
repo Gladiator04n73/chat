@@ -1,0 +1,104 @@
+.profileInfo {
+  display: flex;
+  gap: 60px;
+  width: 503px;
+  max-width: 100%;
+  margin: 32px auto;
+  color: black;
+  flex-direction: row;
+}
+
+.avatar {
+  background-color: rgba(196, 196, 196, 1);
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.content {
+  flex: 1;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.username {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.editButton {
+  border-radius: 3px;
+  background-color: rgba(249, 249, 249, 1);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 11px;
+  border: 1px solid rgba(239,239,239,1);
+}
+
+.stats {
+  display: flex;
+  margin-top: 24px;
+  gap: 20px;
+  font-size: 16px;
+  justify-content: space-between;
+}
+
+.statValue {
+  font-weight: 600;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+@media (max-width: 991px) {
+  .profileInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.followButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.followButton:hover {
+  background-color: #0056b3;
+}
+
+.followButton:focus {
+  outline: none;
+}
+
+.unfollowButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.unfollowButton:hover {
+  background-color: #c82333;
+}
+
+.unfollowButton:focus {
+  outline: none;
+}
