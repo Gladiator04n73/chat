@@ -8,7 +8,7 @@ import UserList from './components/UserList';
 import ChatWindow from './components/ChatWindow';
 
 export default function ChatPage() {
-  const [userId, setUserId] = useState(null); // Changed to state with setter to set actual logged-in user ID
+  const [userId, setUserId] = useState(null);
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [users, setUsers] = useState([]);
   const [currentUserAvatar, setCurrentUserAvatar] = useState(null);
@@ -18,7 +18,7 @@ export default function ChatPage() {
   useEffect(() => {
     async function fetchSessionAndUsers() {
       try {
-        // Fetch current session user
+        
         const sessionResponse = await fetch('http://localhost:3001/api/sessions/current', {
           credentials: 'include',
         });
@@ -29,7 +29,7 @@ export default function ChatPage() {
         setUserId(sessionData.user ? sessionData.user.id : sessionData.id);
         setCurrentUserAvatar(sessionData.avatar || null);
 
-        // Fetch users list
+        
         const usersResponse = await fetch('http://localhost:3001/api/users', {
           credentials: 'include',
         });
@@ -38,7 +38,7 @@ export default function ChatPage() {
         }
         const usersData = await usersResponse.json();
 
-        // Process avatar URLs to add base URL if missing
+        
         const processedUsers = usersData.map(user => ({
           ...user,
           avatar: user.photo && user.photo.startsWith('http')
@@ -50,7 +50,7 @@ export default function ChatPage() {
 
         setUsers(processedUsers);
 
-        // Added logs for current user and user list
+       
         console.log('Current User:', sessionData);
         console.log('User List:', processedUsers);
       } catch (error) {
