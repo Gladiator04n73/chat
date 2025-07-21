@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import io from 'socket.io-client';
 import styles from '../styles/ChatWindow.module.css';
 
-const CHAT_SERVER_URL = 'http://localhost:4000'; // Adjust if needed
+const CHAT_SERVER_URL = 'http://localhost:4000';
 
 export default function ChatWindow({ userId, chatPartnerId, chatPartnerUser }) {
   const socketRef = useRef(null);
@@ -12,39 +12,39 @@ export default function ChatWindow({ userId, chatPartnerId, chatPartnerUser }) {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
 
-  // Scroll to bottom when messages update
+  
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages]);
 
-  // Initialize socket once
+  
   useEffect(() => {
     if (!socketRef.current) {
       socketRef.current = io(CHAT_SERVER_URL);
     }
   }, []);
 
-  // Join room and listen for messages when userId or chatPartnerId changes
+  
   useEffect(() => {
     if (!userId || !chatPartnerId || !socketRef.current) return;
 
     const socket = socketRef.current;
     const room = [userId, chatPartnerId].sort().join('_');
 
-    // Leave previous rooms before joining new one
+    
     socket.emit('leaveAllRooms');
 
     socket.emit('joinRoom', { user1: userId, user2: chatPartnerId });
 
-    // Clear previous messages when switching chat partner
+    
     setMessages([]);
 
-    // Отправляем событие markAsRead при открытии чата с пользователем
+    
     socket.emit('markAsRead', { userId, fromUserId: chatPartnerId });
 
-    // Listen for new messages
+    
     const handleNewMessage = (message) => {
       setMessages(prev => [...prev, message]);
     };
