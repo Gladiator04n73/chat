@@ -10,13 +10,14 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: '*', // Adjust to your frontend origin
+    origin: '*',
     methods: ['GET', 'POST'],
   },
 });
 
 const messages = {};
-const unreadCounts = {}; // { userId: { fromUserId: count } }
+const unreadCounts = {};
+}
 
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);
@@ -36,18 +37,18 @@ io.on('connection', (socket) => {
     socket.join(room);
     console.log(`User ${socket.id} joined room ${room}`);
 
-    // Send existing messages for the room
+    
     if (messages[room]) {
       messages[room].forEach(message => socket.emit('newMessage', message));
     } else {
       messages[room] = [];
     }
 
-    // Send unread count for user1 from user2
+    
     if (unreadCounts[user1] && unreadCounts[user1][user2]) {
       socket.emit('unreadCount', { fromUserId: user2, count: unreadCounts[user1][user2] });
     }
-    // Send unread count for user2 from user1
+   
     if (unreadCounts[user2] && unreadCounts[user2][user1]) {
       socket.emit('unreadCount', { fromUserId: user1, count: unreadCounts[user2][user1] });
     }
@@ -56,7 +57,7 @@ io.on('connection', (socket) => {
   socket.on('sendMessage', ({ sender_id, receiver_id, content }) => {
     const room = [sender_id, receiver_id].sort().join('_');
     const message = {
-      id: Date.now(), // simple unique id
+      id: Date.now(),
       sender_id,
       receiver_id,
       content,
@@ -68,7 +69,7 @@ io.on('connection', (socket) => {
     }
     messages[room].push(message);
 
-    // Update unread count for receiver
+    
     if (!unreadCounts[receiver_id]) {
       unreadCounts[receiver_id] = {};
     }
@@ -79,7 +80,7 @@ io.on('connection', (socket) => {
 
     io.to(room).emit('newMessage', message);
 
-    // Notify receiver about unread count
+    
     io.sockets.sockets.forEach((s) => {
       if (s.id !== socket.id) {
         s.emit('unreadCount', { fromUserId: sender_id, count: unreadCounts[receiver_id][sender_id] });
@@ -90,7 +91,7 @@ io.on('connection', (socket) => {
   socket.on('markAsRead', ({ userId, fromUserId }) => {
     if (unreadCounts[userId] && unreadCounts[userId][fromUserId]) {
       unreadCounts[userId][fromUserId] = 0;
-      // Optionally notify client about reset
+      
       io.sockets.sockets.forEach((s) => {
         s.emit('unreadCount', { fromUserId, count: 0 });
       });
